@@ -1,0 +1,36 @@
+.product__item {
+  margin-bottom: 20px;
+  &-image {
+    width: 275px;
+    height: 260px;
+    object-fit: cover;
+    padding: 8px;
+    border-radius: 30px;
+    transition: 0.3s linear;
+
+    &:hover {
+      transition: 0.3s linear;
+      transform: scale(1.1);
+    }
+  }
+
+  &-name {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 8px 0;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &-price {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &-btn {
+    text-align: center;
+  }
+}

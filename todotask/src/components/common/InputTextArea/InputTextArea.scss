@@ -1,0 +1,13 @@
+.input-textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--white-color);
+  color: var(--white-color);
+  padding-left: 12px;
+  width: 70%;
+  font-size: 18px;
+  &::placeholder {
+    color: var(--lightgray-color);
+  }
+}

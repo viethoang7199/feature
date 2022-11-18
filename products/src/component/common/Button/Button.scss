@@ -1,0 +1,17 @@
+.btn {
+  background-color: var(--lightblue);
+  color: var(--white);
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.5s linear;
+  cursor: pointer;
+  font-size: 18px;
+
+  &:hover {
+    color: var(--white);
+    transition: 0.2s linear;
+    transform: scale(1.1);
+  }
+}

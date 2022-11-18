@@ -1,0 +1,9 @@
+.todolist {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+
+  &__notfound {
+    margin: 0 auto;
+  }
+}

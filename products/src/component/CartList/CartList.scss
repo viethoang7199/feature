@@ -1,0 +1,29 @@
+.cartlist {
+  width: 500px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  padding: 10px;
+  color: var(--white);
+
+  &__title {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  hr {
+    margin: 12px 0;
+  }
+
+  &__empty {
+    font-size: 28px;
+    text-align: center;
+    background-color: var(--gray);
+    color: #000;
+    margin: 30px 0 20px;
+  }
+}

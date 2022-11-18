@@ -1,0 +1,104 @@
+.card {
+  width: 210px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: var(--white-color);
+  margin: 0 16px 16px 0;
+  cursor: default;
+  position: relative;
+  &__title {
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    &:hover {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  &__creator {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    &:hover {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  &__status {
+    font-weight: 600;
+  }
+
+  &__line {
+    margin: 8px 0;
+  }
+
+  &__desc {
+    font-weight: 700;
+  }
+
+  &__descinfo {
+    line-height: 1.2;
+    margin-top: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 50px;
+
+    &:hover {
+      display: -webkit-box;
+      -webkit-line-clamp: 10;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    &-edit,
+    &-delete {
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+      border: none;
+      color: var(--white-color);
+      border-radius: 10px;
+      transition: 0.5s linear;
+      cursor: pointer;
+      &:hover {
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--white-color);
+        transition: 0.2s linear;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.new {
+  color: var(--blue-color);
+}
+.doing {
+  color: var(--green-color);
+}
+.done {
+  color: var(--orange-color);
+}
