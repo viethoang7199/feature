@@ -1,0 +1,28 @@
+.form {
+  &-item {
+    margin-top: 20px;
+    label {
+      font-size: 24px;
+      color: var(--white);
+      width: 150px;
+      margin: 8px 0 4px;
+    }
+    input {
+      padding: 4px 8px;
+      background-color: transparent;
+      color: var(--white);
+      outline: none;
+      border: 1px solid var(--white);
+      width: 100%;
+      font-size: 20px;
+      margin: 8px 0 4px;
+      &::placeholder {
+        color: var(--gray);
+      }
+    }
+  }
+  .btn {
+    width: 100px;
+    margin: 8px 0 4px;
+  }
+}
