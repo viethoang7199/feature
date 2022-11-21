@@ -1,9 +1,5 @@
 const initState = {
-    days: [
-        { id: 1, content: 'ahihi', day: '12/12/2022' },
-        { id: 2, content: 'ahaha', day: '13/12/2022' },
-        { id: 3, content: 'ahehe', day: '14/12/2022' },
-    ]
+    days: []
 }
 
 const rootReducer = (state = initState, action) => {
@@ -11,13 +7,14 @@ const rootReducer = (state = initState, action) => {
         case 'addDay':
             return {
                 ...state,
-                days: [
-                    ...state.days,
-                    action.payload
-                ]
+                days: [...state.days, action.payload]
+            }
+        case 'delDay':
+            return {
+                days: [...state.days]
             }
         default:
-            break;
+            return state;
     }
 }
 

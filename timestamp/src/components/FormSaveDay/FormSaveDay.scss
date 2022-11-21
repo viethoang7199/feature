@@ -1,6 +1,9 @@
 .form {
-  &-item {
+  margin-top: 20px;
+  &-item:not(:first-child) {
     margin-top: 20px;
+  }
+  &-item {
     label {
       font-size: 24px;
       color: var(--white);
@@ -23,6 +26,15 @@
   }
   .btn {
     width: 100px;
-    margin: 8px 0 4px;
+    margin: 8px auto;
+    display: block;
+  }
+
+  .errorMsg {
+    color: var(--red);
+    margin: 4px 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
   }
 }

@@ -4,3 +4,10 @@ export const addDay = payload => {
         payload
     }
 }
+
+export const delDay = () => {
+    return {
+        type: 'delDay',
+
+    }
+}

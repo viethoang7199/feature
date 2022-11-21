@@ -2,8 +2,10 @@
   background-color: var(--purple);
   padding: 4px 12px;
   position: relative;
-  margin-bottom: 20px;
   color: var(--white);
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 
   &-day {
     font-size: 24px;
@@ -16,14 +18,15 @@
   }
   &-btn {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 0;
+    right: 0;
     border: none;
     outline: none;
     background: transparent;
     font-size: 24px;
     font-weight: 600;
-    padding: 8px;
+    padding: 4px 8px;
+    color: var(--white);
     &:active {
       color: var(--red);
     }

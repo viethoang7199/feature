@@ -9,7 +9,11 @@
   text-align: center;
   font-weight: 600;
 }
-
 .main {
-  padding: 40px 0;
+  padding: 20px 0;
+}
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+  .title {
+    font-size: 44px;
+  }
 }

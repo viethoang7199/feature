@@ -12,8 +12,8 @@ function App() {
       <Container>
         <h1 className='title'>Nhắc nhở ngày quan trọng của bạn</h1>
         <Row className='main'>
-          <Col><FormSaveDay /></Col>
-          <Col><DayList /></Col>
+          <Col lg={6} md={12}><FormSaveDay /></Col>
+          <Col lg={6} md={12}><DayList /></Col>
         </Row>
       </Container>
     </div>
