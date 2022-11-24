@@ -5,9 +5,9 @@ export const addDay = payload => {
     }
 }
 
-export const delDay = () => {
+export const delDay = (id) => {
     return {
         type: 'delDay',
-
+        payload: id,
     }
 }

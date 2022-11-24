@@ -21,9 +21,7 @@ const DayList = props => {
 
     const handleDelete = (id) => {
         dispatch(
-            delDay(
-                dayList.splice(id, 1)
-            )
+            delDay(id)
         )
     }
     return (

@@ -10,8 +10,11 @@ const rootReducer = (state = initState, action) => {
                 days: [...state.days, action.payload]
             }
         case 'delDay':
+            let newDay = state.days;
+            const objIndex = newDay.filter(obj => obj.id === action.payload.id)
+            newDay.splice(objIndex, 1)
             return {
-                days: [...state.days]
+                days: [...newDay]
             }
         default:
             return state;
