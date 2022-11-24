@@ -12,12 +12,14 @@ import './FormCreateProduct.scss'
 
 const FormCreateProduct = props => {
 
-    const [formValue, setFormValue] = useState({
+    const initValue = {
         id: uuidv4(),
         name: '',
         price: '',
         image: '',
-    });
+    }
+
+    const [formValue, setFormValue] = useState(initValue);
 
     const [validationMsg, setValidationMsg] = useState('')
     const validateAll = () => {
@@ -66,7 +68,6 @@ const FormCreateProduct = props => {
             icon: "success",
             button: "OK!",
         });
-        setFormValue(formValue);
         navigate('/products')
     };
 
@@ -79,9 +80,7 @@ const FormCreateProduct = props => {
 
     const handleReset = (e) => {
         e.preventDefault()
-        formValue.name = '';
-        formValue.price = '';
-        formValue.image = '';
+        setFormValue(initValue)
     }
 
     return (

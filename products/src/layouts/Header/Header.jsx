@@ -8,8 +8,8 @@ import './Header.scss'
 
 const Header = props => {
 
+    const [show, setShow] = useState(false);
     const [cartData, setCartData] = useState([]);
-
     const fetchData = async () => {
         const response = await cartApis.getAll();
         setCartData(response.data)
@@ -19,7 +19,6 @@ const Header = props => {
         fetchData()
     }, [])
 
-    const [show, setShow] = useState(false);
     return (
         <div className='header'>
             <Link to='/products/add'>
@@ -28,9 +27,8 @@ const Header = props => {
             <Link to='/products'>
                 <Button name='All product' />
             </Link>
-            <p onClick={() => setShow(!show)} className='header-cart'>
+            <p onClick={() => setShow(!show)} className='header-cart' amount={cartData.length}>
                 <i className="fa-solid fa-cart-shopping"></i>
-                <span>{cartData.length}</span>
             </p>
             {show ? <CartList /> : null}
         </div>
