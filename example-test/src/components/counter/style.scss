@@ -1,0 +1,26 @@
+.counter {
+  border: 1px solid #000;
+  display: inline-block;
+  &__number {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    padding: 20px;
+  }
+  &__btn {
+    text-align: center;
+    padding: 8px;
+    border: none;
+    outline: none;
+  }
+}
+.inc {
+  background-color: green;
+}
+.reset {
+  background-color: yellow;
+}
+
+.dec {
+  background-color: red;
+}

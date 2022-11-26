@@ -1,12 +1,10 @@
 import { legacy_createStore as createStore } from 'redux';
-import rootReducer from './reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './reducer';
+
+
 const composeEnhancer = composeWithDevTools();
-const initValue = {
-    totalMoney: 10000,
-}
 
-
-const store = createStore(rootReducer, initValue, composeEnhancer)
+const store = createStore(rootReducer, composeEnhancer)
 
 export default store;

@@ -1,4 +1,8 @@
-const rootReducer = (state, action) => {
+const initValue = {
+    totalMoney: 10000,
+}
+
+const rootReducer = (state = initValue, action) => {
     switch (action.type) {
         case 'DEC':
             return {
