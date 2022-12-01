@@ -1,4 +1,6 @@
 .product__list {
+  padding: 20px;
+
   &-total {
     color: var(--white);
     display: block;
@@ -8,10 +10,9 @@
     }
   }
   &-item {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     .notfound {
       margin: 0 auto;
     }

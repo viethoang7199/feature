@@ -1,36 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import cartApis from '../../apis/cartApis';
-import productApis from '../../apis/productApis';
-import NotFound from '../NotFound/NotFound';
 import ProductItem from '../ProductItem/ProductItem';
 import swal from 'sweetalert';
+import { useDispatch } from 'react-redux';
+import { cartSlice } from '../../redux/cartSlice';
 
 import './ProductList.scss'
 
 const ProductList = props => {
 
-    const [productData, setProductData] = useState([]);
-
-    const fetchData = async () => {
-        const response = await productApis.getAll();
-        setProductData(response.data)
-    };
+    const dispatch = useDispatch();
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        const fetchProducts = async () => {
+            const res = await fetch('https://fakestoreapi.com/products');
+            const data = await res.json();
+            setProducts(data);
+        };
+        fetchProducts();
+    }, []);
 
-    const handleAddToCart = async (item) => {
-        await cartApis.add(item)
+    const handleAddToCart = async (product) => {
+        dispatch(
+            cartSlice.actions.add(product)
+        );
         swal({
             title: "Success!",
-            text: "''" + item.name + "'' has been added to your cart!",
+            text: "''" + product.title + "'' has been added to your cart!",
             icon: "success",
             button: "OK!",
         });
     }
 
-    const arr = productData.map((data) => (
+    const arr = products.map((data) => (
         <ProductItem
             key={data.id}
             item={data}
@@ -40,11 +42,9 @@ const ProductList = props => {
 
     return (
         <div className='product__list'>
-            {productData.length > 0 ? <p className='product__list-total'>Total: <span>{productData.length} products</span></p> : ''}
+            {products.length > 0 ? <p className='product__list-total'>Total: <span>{products.length} products</span></p> : ''}
             <div className='product__list-item'>
-                {arr.length > 0 ? arr : <div className='notfound'>
-                    <NotFound />
-                </div>}
+                {arr}
             </div>
         </div>
     );

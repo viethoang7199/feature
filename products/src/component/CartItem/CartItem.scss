@@ -39,6 +39,14 @@
         font-size: 20px;
       }
     }
+    &-amount {
+      width: 30px;
+      text-align: center;
+      background-color: white;
+      border: 1px solid #000;
+      outline: none;
+      border-radius: 5px;
+    }
     &-price {
       font-size: 20px;
       color: var(--black);

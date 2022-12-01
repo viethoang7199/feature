@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import cartApis from '../../apis/cartApis';
 import CartList from '../../component/CartList/CartList';
 import Button from '../../component/common/Button/Button';
 
@@ -8,16 +8,9 @@ import './Header.scss'
 
 const Header = props => {
 
-    const [show, setShow] = useState(false);
-    const [cartData, setCartData] = useState([]);
-    const fetchData = async () => {
-        const response = await cartApis.getAll();
-        setCartData(response.data)
-    };
+    const cartData = useSelector(state => state.cart)
 
-    useEffect(() => {
-        fetchData()
-    }, [])
+    const [show, setShow] = useState(false);
 
     return (
         <div className='header'>

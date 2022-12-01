@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button/Button';
 import InputText from '../common/InputText/InputText';
 import { v4 as uuidv4 } from 'uuid'
-import productApis from '../../apis/productApis';
 import swal from 'sweetalert';
 import isEmpty from 'validator/lib/isEmpty';
 import isNumeric from 'validator/lib/isNumeric';
@@ -61,7 +60,6 @@ const FormCreateProduct = props => {
             return
         }
 
-        await productApis.add(formValue);
         swal({
             title: "Success!",
             text: "Product Added Successfully!",

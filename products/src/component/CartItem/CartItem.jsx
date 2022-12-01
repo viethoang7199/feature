@@ -13,8 +13,9 @@ const CartItem = ({ item, handleDelCartProduct }) => {
                 <img className='cart__item-img' src={image} alt='' />
                 <h3 className='cart__item-name'>{name}</h3>
                 <div className='cart__item-btn'>
-                    <button onClick={() => setAmount(amount - 1)}>-</button>
-                    <p>{amount}</p>
+                    <button disabled={amount === 0 ? true : false} onClick={() => setAmount(amount - 1)}>-</button>
+                    {/* <p>{amount}</p> */}
+                    <input className='cart__item-amount' type='text' value={amount} onChange={(e) => setAmount(e.target.value)} />
                     <button onClick={() => setAmount(amount + 1)}>+</button>
                 </div>
                 <p className='cart__item-price'>${price}</p>
